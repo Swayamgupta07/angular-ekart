@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<div class="ekart--search--product">
+  <input class="ekart-search-product-input" #searchInput />
+  <button class="btn btn-search" (click)="UpdateSearchText()">
+    <!-- isma kya huya hai ki agat selectext mein kuch nhi likha toh voh disabled hi rahega varna aajeyga zinda for pressing     -->
+    Search
+  </button>
+</div>
+
+<div class="ekart-search-result-for">
+  <p *ngIf="searchText != ''">
+    <strong>Search Result For: </strong>{{ searchText }}
+  </p>
+  <!-- imsa ngif yhi huya hai ki searchtext mein jab tak kuch nhi likhoge tab tak voh nhi dekhega -->
+</div>

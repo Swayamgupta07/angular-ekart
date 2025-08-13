@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<div class="ekart--product--item" (click)="selectProduct()">
+  <div class="card">
+    <b></b>
+    <div class="ekart-wishlist-sale-container">
+      <div class="ekart-on-sale-tag" *ngIf="product?.discountPrice">
+        {{ (100 - ((product?.discountPrice ?? 0) / (product?.price ?? 1) * 100)).toFixed(0) }}%
+        <!-- this discountPrice ko bina decimal ka liye yeah kiye hai humna -->
+        <!-- 👆 Original comment: showing discount percentage without decimal -->
+        <!-- ✅ Improved: We used toFixed(0) to round discount percent to whole number -->
+      </div>
+    </div>
+
+    <div class="content">
+      <p class="title"><span>{{product.name}}</span></p>
+      <div class="details">
+        <p>Price: {{ product.price }}</p>
+        <p>Name: {{ product.name }}</p>
+        <p>Category: {{ product.gender }} • {{ product.category }} • {{ product.brand }}</p>
+        <p>Colors: {{ product.color.length }} colors • {{ product.color }} • {{ product.slug }}</p>
+        <p
+          [ngStyle]="{
+            'font-weight': 'bold',
+            color: product.is_in_inventory ? 'green' : 'red'
+          }"
+        >
+          <!-- isma yhi huya hai ki ng style bold hogaya matlab text hlaka or accha aayega upbhara huya color 
+               and agar humara prod agar inventory mein hai toh voh green yeah red meon kuch bhi ho sakte hai  -->
+          <!-- 👆 Original comment preserved exactly -->
+          <!-- ✅ Improved: If product is in inventory, show in green with item count; else show in red as not available -->
+          {{ product.is_in_inventory ? 'Available ' + product.items_left : 'Not Available (0)' }}
+        </p>
+      </div>
+    </div>
+
+    <div class="ekart--product--image">
+      <img [src]="product.imageURL" class="ekart--product--image" alt="prod-list-html mein aao">
+    </div>
+
+    <div class="ekart--add--to--price">
+      {{ product.price }}
+      <!-- ✅ Improved: Displaying original price of the product -->
+    </div>
+
+    <div class="ekart--product--name">
+      {{ product.name }}
+      <!-- ✅ Improved: Displaying the product name -->
+    </div>
+
+    <div class="ekart--product--category">
+      {{ product.gender }} • {{ product.category }} • {{ product.brand }}
+    </div>
+
+    <div class="ekart--product--available-colors">
+      {{ product.color.length }} colors • {{ product.color }} • {{ product.slug }}
+    </div>
+
+    <div
+      class="ekart--product--in--stock"
+      [ngStyle]="{
+        'font-weight': 'bold',
+        color: product.is_in_inventory ? 'green' : 'red'
+      }"
+    >
+      <!-- isma yhi huya hai ki ng style bold hogaya matlab text hlaka or accha aayega upbhara huya color 
+           and agar humara prod agar inventory mein hai toh voh green yeah red meon kuch bhi ho sakte hai  -->
+      <!-- 👆 Original comment preserved exactly -->
+      <!-- ✅ Improved: If product is in inventory, show in green with item count; else show in red as not available -->
+      {{ product.is_in_inventory ? 'Available ' + product.items_left : 'Not Available (0)' }}
+    </div>
+  </div>
+
+  <div class="ekart--add--to--wishlist">
+    <i class="fa fa-heart-o" aria-hidden="true"></i>
+    <!-- <i>{{i}}</i> -->
+    <!-- 👆 Original comment: you were trying to display index i -->
+    <!-- ✅ Improved: The index i was printed here earlier, now commented out -->
+  </div>
+</div>

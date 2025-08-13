@@ -1,0 +1,29 @@
+/* New header container for other pages */
+.ekart--new-header {
+  width: 100%;
+  background-color: #f8f9fa; /* Light background for contrast */
+  padding: 0.5rem;
+  margin-top: 0.5rem; /* Push it down from top */
+  box-shadow:none; /* Soft shadow */
+  position: relative;
+}
+
+/* Links on top right but not stuck to the corner */
+.ekart--new-log {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  font-size: 1rem;
+  color: #444;
+}
+
+.ekart--new-log a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.ekart--new-log a:hover {
+  color: #28a745; /* Green on hover */
+}

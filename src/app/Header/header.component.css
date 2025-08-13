@@ -1,0 +1,116 @@
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+
+
+/* Bottom section with menu and search bar */
+.ekart-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:rgb(204, 202, 199);
+  padding: 1rem 2rem;
+}
+
+/* Menu with center alignment */
+.ekart-menu {
+  display: flex;
+  gap: 2rem;
+  margin: 0 auto;
+}
+
+.ekart {
+  font-size: 2rem; 
+  font-weight: bold;
+   font-family: "Concert One", sans-serif;
+}
+
+.ekart a {
+  text-decoration: none;
+  color: #000; /* Black color */
+  font-family: 'Poppins', sans-serif; /* Optional: even more stylish */
+  font-size: 2rem;
+}
+.ekart-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.ekart-menu a:hover {
+  color: #007bff;
+}
+
+.ekart-search-bar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  overflow: hidden; /* Keeps child elements inside rounded border */
+  padding: 0 0.5rem;
+  height: 45px;
+}
+
+.ekart-search-box {
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  flex: 1;
+  border-radius: 25px;
+}
+
+.ekart--search--btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.ekart--search--btn lord-icon {
+  width: 30px;
+  height: 30px;
+}
+
+
+
+@media (max-width: 768px) {
+  .ekart--header {
+    padding-top: 1rem;
+  }
+
+  .ekart-log {
+    position: static;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .ekart-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ekart-menu {
+    margin: 1rem 0;
+    justify-content: flex-start;
+  }
+
+  .ekart-search-bar {
+    margin-top: 1rem;
+  }
+}

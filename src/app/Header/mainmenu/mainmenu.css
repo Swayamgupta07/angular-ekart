@@ -1,0 +1,113 @@
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* ====== HEADER BAR ====== */
+.ekart-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(204, 202, 199);
+  padding: 1rem 2rem;
+  gap: 1rem;
+}
+
+/* ---- LEFT: LOGO ---- */
+.ekart {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.ekart a {
+  text-decoration: none;
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* ---- CENTER: NAV MENU ---- */
+.ekart-menu {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.ekart-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.ekart-menu a:hover {
+  color: #007bff;
+}
+
+/* ---- RIGHT: SEARCH ---- */
+.ekart-search-bar {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  padding: 0 0.5rem;
+  height: 45px;
+  max-width: 300px;
+}
+
+.ekart-search-box {
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  flex: 1;
+}
+
+.ekart--search--btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ekart--search--btn lord-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .ekart-bottom-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ekart-menu {
+    justify-content: center;
+    margin: 1rem 0;
+  }
+
+  .ekart-search-bar {
+    justify-content: center;
+    margin-top: 1rem;
+    max-width: 100%;
+  }
+
+  .ekart {
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+}

@@ -1,0 +1,43 @@
+<div class="filter-container">
+  <span>Filter: </span>
+
+  <input
+    type="radio"
+    name="filter"
+    value="all"
+    [(ngModel)]="selectedFilterRadioButton"
+    (change)="onSelectedFilterRadioButtonChange()"
+  />
+<!-- [(ngModel)]="selectedFilterRadioButton" → Binds the selected radio button to the component property.
+
+When the user selects a radio:
+
+  selectedFilterRadioButton in the Filter component updates automatically (two-way binding).
+  (change) event triggers onSelectedFilterRadioButtonChange().
+
+That emits the new value to the ProductList parent. -->
+
+
+
+  <!-- isma kya huya hai ki jab bhi change hoge tabhi radio button change ho onSelectedFilterRadioButtonChange() chala do -->
+  <span>{{ "All (" + all + ")" }}</span>
+
+  <input
+    type="radio"
+    name="filter"
+    value="true"
+    [(ngModel)]="selectedFilterRadioButton"
+    (change)="onSelectedFilterRadioButtonChange()"
+  />
+  <span>{{ "In Stock (" + inStock + ")" }}</span>
+
+  <input
+    type="radio"
+    name="filter"
+    value="false"
+    [(ngModel)]="selectedFilterRadioButton"
+    (change)="onSelectedFilterRadioButtonChange()"
+  />
+
+  <span>{{ "Out of Stock (" + outOfstock + ")" }}</span>
+</div>
